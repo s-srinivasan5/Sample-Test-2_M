@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<x:dirset xmlns:x="http://microfocus.com/directivesset" schemaVersion="1.1">
+    <x:directive handler="project.cobolSettings" id="additional" name="REMOVE &quot;FIXED&quot; REMOVE &quot;BYTE-LENGTH&quot; IBMCOMP indd(sysin 80 r) outdd(sysout 121 r) DATAMAP XREF AMODE&quot;31&quot; CICSECM(EXCI=YES) INITCALL(casbnccl)"/>
+</x:dirset>

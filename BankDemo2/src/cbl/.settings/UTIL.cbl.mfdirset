@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<x:dirset xmlns:x="http://microfocus.com/directivesset" schemaVersion="1.1">
+    <x:directive handler="project.cobolSettings" id="additional" name="AMODE&quot;31&quot; DATA&quot;31&quot;"/>
+</x:dirset>

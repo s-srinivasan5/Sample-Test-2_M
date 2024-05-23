@@ -1,0 +1,49 @@
+      $set ans85 mf defaultbyte"00" case constant INTCODE(0)
+       IDENTIFICATION DIVISION.
+       PROGRAM-ID. CREATEP.
+
+       ENVIRONMENT DIVISION.
+       CONFIGURATION SECTION.
+
+       special-names.
+           call-convention 74 is staticWINAPI.
+
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+
+       copy "MINIWIN.CPY".
+       copy "WINTYPES.CPY".
+       COPY "WINUSER.CPY".
+       COPY "WINBASE.CPY".
+       
+       78  PROGRAM-NAME        VALUE "CREATEP".
+       
+       01  STARTUP-INFO.
+      *STARTUPINFOA.
+       01  PROCESS-INFO.
+      *PROCESS-INFORMATION.
+       01  WS-OKAY.
+      *BOOL.
+       01  WS-APP-RETURN-CODE.
+      *DWORD.
+       
+       01  EXECUTABLE-AND-COMMAND-LINE     PIC X(127).  
+
+       PROCEDURE DIVISION.
+
+       000-BEGIN.
+       $IF  INTCODE=1
+           CALL "COB32API" END-CALL
+       $END
+       
+           DISPLAY PROGRAM-NAME ":Starting"
+           
+           MOVE LENGTH OF STARTUP-INFO TO CB OF STARTUP-INFO
+           MOVE SW-NORMAL TO WSHOWWINDOW OF STARTUP-INFO
+           MOVE Z"NOTEPAD.EXE CREATEP.TXT" TO 
+                       EXECUTABLE-AND-COMMAND-LINE
+           
+           
+           GOBACK.
+
+       END PROGRAM CREATEP.
